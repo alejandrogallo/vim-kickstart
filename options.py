@@ -1,6 +1,16 @@
 import os
 import sys
 
+VERBOSE=False
+def vprint(arg1):
+    """Verbose print
+
+    :arg1: TODO
+    :returns: TODO
+
+    """
+    if VERBOSE:
+        print(arg1)
 
 #Change this line if your vim config file is different
 MYVIMRC=os.path.expanduser("~/.vimrc")
@@ -32,7 +42,9 @@ class OneLiner(object):
         readline = True
         while (readline):
             readline = vimfd.readline()
-            if (self.option in readline) or (readline in self.option):
+            if (self.option in readline) :
+                vprint(self.option)
+                vprint(readline)
                 vimfd.close()
                 return True
         vimfd.close()
