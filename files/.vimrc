@@ -10,7 +10,6 @@ Plugin 'ervandew/supertab'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'SirVer/ultisnips'
-"Plugin 'Valloric/YouCompleteMe'
 Plugin 'honza/vim-snippets'
 Plugin 'mattn/emmet-vim'
 Plugin 'bling/vim-airline'
@@ -26,7 +25,6 @@ call vundle#end()
 """""""""""""""""""
 "  GENERAL STUFF  "
 """""""""""""""""""
-
 "No compatibility with vi
 set nocompatible
 
@@ -63,16 +61,19 @@ set wildmenu
 "  LEADER key STUFF  "
 """"""""""""""""""""""
 "Set mapleader to something else if you like
-let mapleader='-'
+let mapleader=','
 
 "Save current buffer
-nnoremap <leader>s :w<cr>
+nnoremap <leader>w :w<cr>
 
 "Close vim without saving
 nnoremap <leader>q :q<cr>
 
 "/ is way too far away
 nnoremap <leader>f /
+
+" too complicated to replace
+nnoremap <leader>r :%s/
 
 "Toggle NERDTree file structure easily
 noremap <leader>ne :NERDTreeToggle<cr>
@@ -96,9 +97,16 @@ noremap <S-Tab> :bp<CR>
 """""""""""""
 "  AIRLINE  "
 """""""""""""
-let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
 let g:Powerline_symbols = 'fancy'
+
+let g:airline_theme = 'hybrid'
+
+let g:airline#extensions#tabline#enabled = 1
+
+" To get the downbar
+set laststatus=2
 
 
 """""""""""""""""""""
