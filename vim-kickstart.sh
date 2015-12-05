@@ -2,6 +2,7 @@
 if [ "$(uname)" == "Darwin"  ] 
 then
 	__MAC__="TRUE"
+	__LINUX__=""
 	echo "We are on a MAC, yeah"
 	echo "We use brew for some stuff.. Maybe you should uninstall MacPorts and Fink if they are on the system."
 	echo "Checking for HomeBrew.."
@@ -12,6 +13,9 @@ then
 		echo "Brew not detected, install it, go to http://brew.sh"
 		exit 1
 	fi
+else
+	__MAC__=""
+	__LINUX__="TRUE"
 fi
 
 
@@ -73,7 +77,7 @@ fi
 #INSTALL YOUCOMPLETEME
 YCM_URL="https://github.com/Valloric/YouCompleteMe"
 installing YouCompleteMe
-if [ __MAC__ ]
+if [ $__MAC__ ]
 then 
 	echo "We need MacVim"
 	if [ $(which mvim) ]
