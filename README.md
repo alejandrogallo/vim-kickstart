@@ -23,3 +23,4 @@ I assume Mac users use the package manager [brew](https://brew.sh),  specially f
 ## Disclaimer ##
 
 Theoretically the script shouldn't erase any information in the directory *.vim* or in the file *.vimrc*, however backing them up doesn't hurt. 
+
