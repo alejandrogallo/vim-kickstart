@@ -15,8 +15,11 @@ then
 fi
 
 
-guess_right(){
-	echo "$1 has been detected, I guess it is installed right"
+installing(){
+	echo -e "\n\n====> INSTALLING $1 <===="
+}
+already_installed(){
+	echo -e "\t---> Package $1 already installed \n\t\t(erase the files in .vim/bundle/ to trigger the installation)"
 }
 add_plugin(){
 	echo "Adding plugin $1 to .vimrc"
@@ -53,10 +56,10 @@ fi
 
 
 # INSTALLATION OF VUNDLE.VIM
-echo "Installing Vundle.vim"
+installing Vundle.vim
 if test -e .vim/bundle/Vundle.vim
 then
-    guess_right Vundle.vim
+    already_installed Vundle.vim
 else	
 	echo "Vundle.vim not detected"
 	echo "Getting Vundle from $VUNDLE_URL"
@@ -69,7 +72,7 @@ fi
 
 #INSTALL YOUCOMPLETEME
 YCM_URL="https://github.com/Valloric/YouCompleteMe"
-echo "Installing YouCompleteMe"
+installing YouCompleteMe
 if [ __MAC__ ]
 then 
 	echo "We need MacVim"
@@ -84,7 +87,7 @@ fi
 
 if test -e .vim/bundle/YouCompleteMe
 then
-   guess_right YouCompleteMe
+   already_installed YouCompleteMe
 else
  	echo "YouCompleteMe not detected, getting it from $YCM_URL"	
 	git clone $YCM_URL ~/.vim/bundle/YouCompleteMe
@@ -101,10 +104,10 @@ fi
 
 #INSTALL NERDTREE
 NERDTREE_URL="https://github.com/scrooloose/nerdtree.git"
-echo "Installing NERDTREE..."
+installing NERDTree
 if test -d ~/.vim/bundle/nerdtree
 then
-	guess_right nerdtree
+	already_installed nerdtree
 else	
 	git clone $NERDTREE_URL ~/.vim/bundle/nerdtree
 	add_plugin "scrooloose\/nerdtree"
@@ -113,10 +116,10 @@ fi
 
 #INSTALL AIRLINE
 AIRLINE_URL="https://github.com/bling/vim-airline.git"
-echo "Installing vim-airline..."
+installing VIM-AIRLINE
 if test -d ~/.vim/bundle/vim-airline
 then
-	guess_right vim-airline
+	already_installed vim-airline
 else
 	git clone $AIRLINE_URL ~/.vim/bundle/vim-airline
 	add_plugin "bling\/vim-airline"
