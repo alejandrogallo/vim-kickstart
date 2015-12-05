@@ -14,7 +14,7 @@ Just download the code and execute the script:
     ./vim-kickstart
 
 The code is self-explanatory, so if you want to add other packages 
-go ahead.
+go ahead. I use mainly the package manager [Vundle](https://github.com/VundleVim/Vundle.vim).
 
 Mac Users
 -------
