@@ -148,7 +148,10 @@ then
 else
 	git clone $AIRLINE_URL $VIM_INSTALL_FOLDER/vim-airline
 	add_plugin "bling\/vim-airline"
+	# for color in the tabline
+	add_config "set term=xterm-256color"
 	add_config "let g:airline#extensions#tabline#enabled = 1" 
+	add_config "let g:Powerline_symbols = 'fancy'"
 	add_config "noremap <Tab> :bn<CR>" 
 	add_config "noremap <Tab-S> :bp<CR>" 
 	intall_with_vundle
