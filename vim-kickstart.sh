@@ -1,4 +1,6 @@
-#! /bin/bash
+#!/bin/bash
+
+
 VIMRC="$HOME/.vimrc"
 VIM_FOLDER="$HOME/.vim"
 VIM_INSTALL_FOLDER="$VIM_FOLDER/bundle"
