@@ -50,8 +50,6 @@ intall_with_vundle(){
 
 
 VUNDLE_URL="https://github.com/VundleVim/Vundle.vim"
-
-
 ORIGIN=$PWD
 echo "CD to $HOME"
 cd $HOME
@@ -157,25 +155,27 @@ else
 	intall_with_vundle
 fi
 
-#INSTALL SnipMate.vim
-
-folder_name='vim-snipmate'
-plug_name='garbas\/vim-snipmate'
-installing vim-snipmate
-if test -d $VIM_INSTALL_FOLDER/$folder_name
-then 
-	already_installed SnipMate.vim
-else
-	add_plugin 'MarcWeber\/vim-addon-mw-utils'
-	add_plugin 'tomtom\/tlib_vim'
-	add_plugin $plug_name
-	#Optional
-	add_plugin 'honza\/vim-snippets'
-	add_config "\" SnipMate.vim CONFIGURATION"
-	add_config "ino <c-j> <c-r>=TriggerSnippet()<cr>"
-	add_config "snor <c-j> <esc>i<right><c-r>=TriggerSnippet()<cr>" 
-	intall_with_vundle
-fi
+##INSTALL SnipMate.vim
+#folder_name='vim-snipmate'
+#plug_name='garbas\/vim-snipmate'
+#installing vim-snipmate
+#if test -d $VIM_INSTALL_FOLDER/$folder_name
+#then 
+#	already_installed plug_name
+#else
+#	add_plugin 'MarcWeber\/vim-addon-mw-utils'
+#	intall_with_vundle
+#	add_plugin 'tomtom\/tlib_vim'
+#	intall_with_vundle
+#	add_plugin $plug_name
+#	intall_with_vundle
+#	#Optional
+#	add_plugin 'honza\/vim-snippets'
+#	intall_with_vundle
+#	add_config "\" SnipMate.vim CONFIGURATION"
+#	add_config "ino <c-j> <c-r>=TriggerSnippet()<cr>"
+#	add_config "snor <c-j> <esc>i<right><c-r>=TriggerSnippet()<cr>" 
+#fi
 
 folder_name="emmet-vim"
 plug_name="mattn\/emmet-vim"
@@ -188,6 +188,58 @@ else
 	add_plugin $plug_name
 	intall_with_vundle
 fi
+
+
+
+cd $ORIGIN
+
+
+folder_name="ultisnips"
+plug_name="SirVer\/ultisnips"
+installing $plug_name
+if test -d $VIM_INSTALL_FOLDER/$folder_name
+then 
+	already_installed $plug_name
+
+else
+	add_plugin $plug_name
+	sleep 2
+	add_plugin 'honza\/vim-snippets'
+	intall_with_vundle
+	add_config '" ultisnips Configuration'
+	add_config '" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.'
+	add_config 'let g:UltiSnipsExpandTrigger="<C-j>"'
+	add_config 'let g:UltiSnipsJumpForwardTrigger="<c-b>"'
+	add_config 'let g:UltiSnipsJumpBackwardTrigger="<c-z>"'
+	add_config 'let g:UltiSnipsListSnippets="<c-l>'
+	add_config ''
+	add_config '" If you want :UltiSnipsEdit to split your window.'
+	add_config 'let g:UltiSnipsEditSplit="vertical"'
+fi
+
+
+
+
+
+
+# SOME CONFIGURATION STUFF
+add_config '" CONFIGURATION STUFF'
+add_config 'set background=dark'
+add_config 'set omnifunc=syntaxcomplete#Complete'
+add_config 'set number'
+add_config 'set nocompatible'
+add_config 'filetype off'
+add_config 'filetype plugin on'
+
+
+
+
+
+
+
+
+
+
 
 
 
