@@ -120,12 +120,40 @@ then
 else
 	git clone $AIRLINE_URL ~/.vim/bundle/vim-airline
 	add_plugin "bling\/vim-airline"
-	vim +PluginInstall +qall
 	echo "let g:airline#extensions#tabline#enabled = 1" >> ~/.vimrc
 	echo "noremap <Tab> :bn<CR>" >> ~/.vimrc
 	echo "noremap <Tab-S> :bp<CR>" >> ~/.vimrc
+	vim +PluginInstall +qall
 fi
 
+#INSTALL SnipMate.vim
+plug_name="vim-snipmate"
+echo "Installing vim-snipmate"
+if test -d ~/.vim/bundle/SnipMate.vim
+then 
+	guess_right SnipMate.vim
+else
+	add_plugin 'MarcWeber/vim-addon-mw-utils'
+	add_plugin 'tomtom/tlib_vim'
+	add_plugin 'garbas/vim-snipmate'
+	#Optional
+	add_plugin 'honza/vim-snippets'
+	echo "\" SnipMate.vim CONFIGURATION">>~/.vimrc
+	echo "ino <c-j> <c-r>=TriggerSnippet()<cr>" >> ~/.vimrc
+	echo "snor <c-j> <esc>i<right><c-r>=TriggerSnippet()<cr>" >> ~/.vimrc
+	vim +PluginInstall +qall
+fi
+
+plug_name="mattn/emmet-vim"
+echo "Installing $plug_name"
+if test -d ~/.vim/bundle/$plug_name
+then 
+	guess_right $plug_name
+
+else
+	add_plugin $plug_name
+	vim +PluginInstall +qall
+fi
 
 
 
