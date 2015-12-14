@@ -136,9 +136,11 @@ else
 fi
 
 #INSTALL SnipMate.vim
-plug_name="vim-snipmate"
+
+foler_name="vim-snipmate"
+plug_name="garbas/vim-snipmate"
 echo "Installing vim-snipmate"
-if test -d ~/.vim/bundle/SnipMate.vim
+if test -d $VIM_INSTALL_FOLDER/$folder_name
 then 
 	guess_right SnipMate.vim
 else
@@ -153,9 +155,10 @@ else
 	vim +PluginInstall +qall
 fi
 
+folder_name="emmet-vim"
 plug_name="mattn/emmet-vim"
 echo "Installing $plug_name"
-if test -d ~/.vim/bundle/$plug_name
+if test -d $VIM_INSTALL_FOLDER/$folder_name
 then 
 	guess_right $plug_name
 
