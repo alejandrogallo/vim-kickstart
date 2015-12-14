@@ -33,10 +33,21 @@ add_plugin(){
 	link=$1
 	cp .vimrc .vimrc.tmp
 	cat .vimrc | perl -pe "s/(.*vundle#begin.*)/\1\nPlugin \'$link\'/g" > .vimrc.tmp
-	cat .vimrc.tmp
+	#cat .vimrc.tmp
 	mv .vimrc.tmp .vimrc
 
 }
+
+add_config() {
+	text=$@
+	echo $@ >> $VIMRC	
+}
+
+intall_with_vundle(){
+	echo "Calling Vundle installation routine"
+	vim +PluginInstall +qall 
+}
+
 
 VUNDLE_URL="https://github.com/VundleVim/Vundle.vim"
 
@@ -72,8 +83,15 @@ else
 	echo "Getting Vundle from $VUNDLE_URL"
 	git clone https://github.com/VundleVim/Vundle.vim $VIM_INSTALL_FOLDER/Vundle.vim
 	echo -e "set nocompatible\nfiletype off\nset rtp+=$VIM_INSTALL_FOLDER/Vundle.vim\ncall vundle#begin()\nPlugin 'VundleVim/Vundle.vim'\n\" All of your Plugins must be added before the following line\ncall vundle#end()\nfiletype plugin indent on\n">>.vimrc
-	echo "Calling Vundle installation routine"
-	vim +PluginInstall +qall 
+	add_config "set nocompatible"
+	add_config "filetype off"
+	add_config "set rtp+=$VIM_INSTALL_FOLDER/Vundle.vim"
+	add_config "call vundle#begin()"
+	add_config "Plugin 'VundleVim/Vundle.vim'"
+	add_config "\" All of your Plugins must be added before the following line"
+	add_config "call vundle#end()"
+	add_config "filetype plugin indent on"
+	intall_with_vundle
 fi
 
 
@@ -103,7 +121,7 @@ else
 	python install.py --clang-completer
 	cd ~ 
 	add_plugin "Valloric\/YouCompleteMe"
-	vim +PluginInstall +qall 
+	intall_with_vundle
 
 fi
 
@@ -118,7 +136,7 @@ then
 else	
 	git clone $NERDTREE_URL $VIM_INSTALL_FOLDER/nerdtree
 	add_plugin "scrooloose\/nerdtree"
-	vim +Helptags +PluginInstall +qall 
+	intall_with_vundle
 fi
 
 #INSTALL AIRLINE
@@ -130,10 +148,10 @@ then
 else
 	git clone $AIRLINE_URL $VIM_INSTALL_FOLDER/vim-airline
 	add_plugin "bling\/vim-airline"
-	echo "let g:airline#extensions#tabline#enabled = 1" >> ~/.vimrc
-	echo "noremap <Tab> :bn<CR>" >> ~/.vimrc
-	echo "noremap <Tab-S> :bp<CR>" >> ~/.vimrc
-	vim +PluginInstall +qall
+	add_config "let g:airline#extensions#tabline#enabled = 1" 
+	add_config "noremap <Tab> :bn<CR>" 
+	add_config "noremap <Tab-S> :bp<CR>" 
+	intall_with_vundle
 fi
 
 #INSTALL SnipMate.vim
@@ -150,10 +168,10 @@ else
 	add_plugin $plug_name
 	#Optional
 	add_plugin 'honza\/vim-snippets'
-	echo "\" SnipMate.vim CONFIGURATION">>~/.vimrc
-	echo "ino <c-j> <c-r>=TriggerSnippet()<cr>" >> ~/.vimrc
-	echo "snor <c-j> <esc>i<right><c-r>=TriggerSnippet()<cr>" >> ~/.vimrc
-	vim +PluginInstall +qall
+	add_config "\" SnipMate.vim CONFIGURATION"
+	add_config "ino <c-j> <c-r>=TriggerSnippet()<cr>"
+	add_config "snor <c-j> <esc>i<right><c-r>=TriggerSnippet()<cr>" 
+	intall_with_vundle
 fi
 
 folder_name="emmet-vim"
@@ -165,7 +183,7 @@ then
 
 else
 	add_plugin $plug_name
-	vim +PluginInstall +qall
+	intall_with_vundle
 fi
 
 
