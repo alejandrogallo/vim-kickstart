@@ -1,4 +1,5 @@
 #! /bin/bash
+VIMRC="$HOME/.vimrc"
 VIM_FOLDER="$HOME/.vim"
 VIM_INSTALL_FOLDER="$VIM_FOLDER/bundle"
 if [ "$(uname)" == "Darwin"  ] 
@@ -137,18 +138,18 @@ fi
 
 #INSTALL SnipMate.vim
 
-foler_name="vim-snipmate"
-plug_name="garbas/vim-snipmate"
-echo "Installing vim-snipmate"
+foler_name='vim-snipmate'
+plug_name='garbas\/vim-snipmate'
+installing vim-snipmate
 if test -d $VIM_INSTALL_FOLDER/$folder_name
 then 
-	guess_right SnipMate.vim
+	already_installed SnipMate.vim
 else
-	add_plugin 'MarcWeber/vim-addon-mw-utils'
-	add_plugin 'tomtom/tlib_vim'
-	add_plugin 'garbas/vim-snipmate'
+	add_plugin 'MarcWeber\/vim-addon-mw-utils'
+	add_plugin 'tomtom\/tlib_vim'
+	add_plugin $plug_name
 	#Optional
-	add_plugin 'honza/vim-snippets'
+	add_plugin 'honza\/vim-snippets'
 	echo "\" SnipMate.vim CONFIGURATION">>~/.vimrc
 	echo "ino <c-j> <c-r>=TriggerSnippet()<cr>" >> ~/.vimrc
 	echo "snor <c-j> <esc>i<right><c-r>=TriggerSnippet()<cr>" >> ~/.vimrc
@@ -156,11 +157,11 @@ else
 fi
 
 folder_name="emmet-vim"
-plug_name="mattn/emmet-vim"
-echo "Installing $plug_name"
+plug_name="mattn\/emmet-vim"
+installing $plug_name
 if test -d $VIM_INSTALL_FOLDER/$folder_name
 then 
-	guess_right $plug_name
+	already_installed $plug_name
 
 else
 	add_plugin $plug_name
