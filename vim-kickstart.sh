@@ -33,7 +33,7 @@ add_plugin(){
 	link=$1
 	cp .vimrc .vimrc.tmp
 	cat .vimrc | perl -pe "s/(.*vundle#begin.*)/\1\nPlugin \'$link\'/g" > .vimrc.tmp
-	#cat .vimrc.tmp
+	cat .vimrc.tmp
 	mv .vimrc.tmp .vimrc
 
 }
@@ -138,7 +138,7 @@ fi
 
 #INSTALL SnipMate.vim
 
-foler_name='vim-snipmate'
+folder_name='vim-snipmate'
 plug_name='garbas\/vim-snipmate'
 installing vim-snipmate
 if test -d $VIM_INSTALL_FOLDER/$folder_name
