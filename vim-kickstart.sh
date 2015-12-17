@@ -210,8 +210,8 @@ else
 	add_config '" ultisnips Configuration'
 	add_config '" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.'
 	add_config 'let g:UltiSnipsExpandTrigger="<C-j>"'
-	add_config 'let g:UltiSnipsJumpForwardTrigger="<c-b>"'
-	add_config 'let g:UltiSnipsJumpBackwardTrigger="<c-z>"'
+	add_config 'let g:UltiSnipsJumpForwardTrigger="<c-n>"'
+	add_config 'let g:UltiSnipsJumpBackwardTrigger="<c-p>"'
 	add_config 'let g:UltiSnipsListSnippets="<c-l>"'
 	add_config ''
 	add_config '" If you want :UltiSnipsEdit to split your window.'
@@ -231,11 +231,6 @@ add_config 'set number'
 add_config 'set nocompatible'
 add_config 'filetype off'
 add_config 'filetype plugin on'
-
-
-
-
-
 
 
 
