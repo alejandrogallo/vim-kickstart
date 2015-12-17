@@ -68,7 +68,7 @@ then
 		mkdir $VIM_INSTALL_FOLDER
 	fi
 else
-	echo "Creating .vim folger..."
+	echo "Creating .vim folder..."
 	mkdir .vim
 fi
 
