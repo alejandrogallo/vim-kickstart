@@ -193,7 +193,6 @@ fi
 
 
 
-cd $ORIGIN
 
 
 folder_name="ultisnips"
