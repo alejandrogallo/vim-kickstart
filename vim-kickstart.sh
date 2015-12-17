@@ -213,7 +213,7 @@ else
 	add_config 'let g:UltiSnipsExpandTrigger="<C-j>"'
 	add_config 'let g:UltiSnipsJumpForwardTrigger="<c-b>"'
 	add_config 'let g:UltiSnipsJumpBackwardTrigger="<c-z>"'
-	add_config 'let g:UltiSnipsListSnippets="<c-l>'
+	add_config 'let g:UltiSnipsListSnippets="<c-l>"'
 	add_config ''
 	add_config '" If you want :UltiSnipsEdit to split your window.'
 	add_config 'let g:UltiSnipsEditSplit="vertical"'
