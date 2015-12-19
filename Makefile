@@ -1,4 +1,4 @@
 options: 
-	python command-config.py
+	python my_options.py
 plugins:
 	bash vim-kickstart.sh

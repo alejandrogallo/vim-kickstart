@@ -223,14 +223,6 @@ fi
 
 
 
-# SOME CONFIGURATION STUFF
-add_config '" CONFIGURATION STUFF'
-add_config 'set background=dark'
-add_config 'set omnifunc=syntaxcomplete#Complete'
-add_config 'set number'
-add_config 'set nocompatible'
-add_config 'filetype off'
-add_config 'filetype plugin on'
 
 
 
