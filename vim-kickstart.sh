@@ -182,11 +182,8 @@ fi
 AIRLINE_URL="https://github.com/bling/vim-airline.git"
 folder_name="vim-airline"
 plug_name="bling\/vim-airline"
-installing VIM-AIRLINE
-if test -d $VIM_INSTALL_FOLDER/$folder_name
-then
-	already_installed $plug_name
-else
+begin_install
+if test -z "$PLUGIN_INSTALLED"; then
 	git clone $AIRLINE_URL $VIM_INSTALL_FOLDER/$folder_name
 	add_plugin $plug_name
 	# for color in the tabline
@@ -198,27 +195,6 @@ else
 	install_with_vundle
 fi
 
-##INSTALL SnipMate.vim
-#folder_name='vim-snipmate'
-#plug_name='garbas\/vim-snipmate'
-#installing vim-snipmate
-#if test -d $VIM_INSTALL_FOLDER/$folder_name
-#then 
-#	already_installed plug_name
-#else
-#	add_plugin 'MarcWeber\/vim-addon-mw-utils'
-#	install_with_vundle
-#	add_plugin 'tomtom\/tlib_vim'
-#	install_with_vundle
-#	add_plugin $plug_name
-#	install_with_vundle
-#	#Optional
-#	add_plugin 'honza\/vim-snippets'
-#	install_with_vundle
-#	add_config "\" SnipMate.vim CONFIGURATION"
-#	add_config "ino <c-j> <c-r>=TriggerSnippet()<cr>"
-#	add_config "snor <c-j> <esc>i<right><c-r>=TriggerSnippet()<cr>" 
-#fi
 
 ########################################
 #  Install Emmet for vim (html stuff)  #
@@ -226,12 +202,8 @@ fi
 
 folder_name="emmet-vim"
 plug_name="mattn\/emmet-vim"
-installing $plug_name
-if test -d $VIM_INSTALL_FOLDER/$folder_name
-then 
-	already_installed $plug_name
-
-else
+begin_install
+if test -z "$PLUGIN_INSTALLED"; then
 	add_plugin $plug_name
 	install_with_vundle
 fi
@@ -246,14 +218,9 @@ fi
 
 folder_name="ultisnips"
 plug_name="SirVer\/ultisnips"
-installing $plug_name
-if test -d $VIM_INSTALL_FOLDER/$folder_name
-then 
-	already_installed $plug_name
-
-else
-	add_plugin $plug_name
-	sleep 2
+begin_install
+if test -z "$PLUGIN_INSTALLED"; then
+	add_plugin 
 	add_plugin 'honza\/vim-snippets'
 	install_with_vundle
 	add_config '" ultisnips Configuration'
@@ -269,6 +236,10 @@ fi
 
 
 
+
+################################
+#  NERDCOMMENTER INSTALLATION  #
+################################
 
 folder_name="nerdcommenter"
 plug_name="scrooloose\/nerdcommenter"
