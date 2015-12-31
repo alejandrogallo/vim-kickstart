@@ -11,6 +11,7 @@
 VIMRC="$HOME/.vimrc"
 VIM_FOLDER="$HOME/.vim"
 VIM_INSTALL_FOLDER="$VIM_FOLDER/bundle"
+PLUGIN_INSTALLED=""
 if [ "$(uname)" == "Darwin"  ] 
 then
 	__MAC__="TRUE"
@@ -28,6 +29,15 @@ fi
 ##########################
 
 
+begin_install() {
+	installing $plug_name
+	if test -d $VIM_INSTALL_FOLDER/$folder_name; then 
+		already_installed $plug_name
+		PLUGIN_INSTALLED="True"
+	else
+		PLUGIN_INSTALLED=""
+	fi
+}
 check_brew(){
 	if [ $(which brew)  ]
 	then 
@@ -59,7 +69,7 @@ add_config() {
 	echo $@ >> $VIMRC	
 }
 
-intall_with_vundle(){
+install_with_vundle(){
 	echo "Calling Vundle installation routine"
 	vim +PluginInstall +qall 
 }
@@ -87,7 +97,10 @@ else
 fi
 
 
-# INSTALLATION OF VUNDLE.VIM
+####################################
+#  INSTALL PACKAGE MANAGER VUNDLE  #
+####################################
+
 installing Vundle.vim
 if test -e $VIM_INSTALL_FOLDER/Vundle.vim
 then
@@ -105,11 +118,15 @@ else
 	add_config "\" All of your Plugins must be added before the following line"
 	add_config "call vundle#end()"
 	add_config "filetype plugin indent on"
-	intall_with_vundle
+	install_with_vundle
 fi
 
 
-#INSTALL YOUCOMPLETEME
+####################
+#  AUTOCOMPLETION  #
+####################
+
+
 YCM_URL="https://github.com/Valloric/YouCompleteMe"
 installing YouCompleteMe
 if [ $__MAC__ ]
@@ -124,6 +141,7 @@ then
 	fi
 fi
 
+
 if test -e $VIM_INSTALL_FOLDER/YouCompleteMe
 then
    already_installed YouCompleteMe
@@ -135,7 +153,7 @@ else
 	python install.py --clang-completer
 	cd ~ 
 	add_plugin "Valloric\/YouCompleteMe"
-	intall_with_vundle
+	install_with_vundle
 
 fi
 
@@ -150,25 +168,30 @@ then
 else	
 	git clone $NERDTREE_URL $VIM_INSTALL_FOLDER/nerdtree
 	add_plugin "scrooloose\/nerdtree"
-	intall_with_vundle
+	install_with_vundle
 fi
 
-#INSTALL AIRLINE
+##############
+#  AIRLINE   #
+##############
+
 AIRLINE_URL="https://github.com/bling/vim-airline.git"
+folder_name="vim-airline"
+plug_name="bling\/vim-airline"
 installing VIM-AIRLINE
-if test -d $VIM_INSTALL_FOLDER/vim-airline
+if test -d $VIM_INSTALL_FOLDER/$folder_name
 then
-	already_installed vim-airline
+	already_installed $plug_name
 else
-	git clone $AIRLINE_URL $VIM_INSTALL_FOLDER/vim-airline
-	add_plugin "bling\/vim-airline"
+	git clone $AIRLINE_URL $VIM_INSTALL_FOLDER/$folder_name
+	add_plugin $plug_name
 	# for color in the tabline
 	add_config "set term=xterm-256color"
 	add_config "let g:airline#extensions#tabline#enabled = 1" 
 	add_config "let g:Powerline_symbols = 'fancy'"
 	add_config "noremap <Tab> :bn<CR>" 
 	add_config "noremap <Tab-S> :bp<CR>" 
-	intall_with_vundle
+	install_with_vundle
 fi
 
 ##INSTALL SnipMate.vim
@@ -180,18 +203,22 @@ fi
 #	already_installed plug_name
 #else
 #	add_plugin 'MarcWeber\/vim-addon-mw-utils'
-#	intall_with_vundle
+#	install_with_vundle
 #	add_plugin 'tomtom\/tlib_vim'
-#	intall_with_vundle
+#	install_with_vundle
 #	add_plugin $plug_name
-#	intall_with_vundle
+#	install_with_vundle
 #	#Optional
 #	add_plugin 'honza\/vim-snippets'
-#	intall_with_vundle
+#	install_with_vundle
 #	add_config "\" SnipMate.vim CONFIGURATION"
 #	add_config "ino <c-j> <c-r>=TriggerSnippet()<cr>"
 #	add_config "snor <c-j> <esc>i<right><c-r>=TriggerSnippet()<cr>" 
 #fi
+
+########################################
+#  Install Emmet for vim (html stuff)  #
+########################################
 
 folder_name="emmet-vim"
 plug_name="mattn\/emmet-vim"
@@ -202,12 +229,16 @@ then
 
 else
 	add_plugin $plug_name
-	intall_with_vundle
+	install_with_vundle
 fi
 
 
 
 
+
+#######################
+#  INSTALL UltiSnips  #
+#######################
 
 folder_name="ultisnips"
 plug_name="SirVer\/ultisnips"
@@ -220,7 +251,7 @@ else
 	add_plugin $plug_name
 	sleep 2
 	add_plugin 'honza\/vim-snippets'
-	intall_with_vundle
+	install_with_vundle
 	add_config '" ultisnips Configuration'
 	add_config '" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.'
 	add_config 'let g:UltiSnipsExpandTrigger="<C-j>"'
@@ -235,7 +266,12 @@ fi
 
 
 
-
+folder_name="nerdcommenter"
+plug_name="scrooloose\/nerdcommenter"
+begin_install
+if test -z $PLUGIN_INSTALLED; then
+	echo "not installed"
+fi
 
 
 
