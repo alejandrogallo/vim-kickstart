@@ -1,3 +1,4 @@
+all: plugins options 
 options: 
 	python my_options.py
 plugins:
