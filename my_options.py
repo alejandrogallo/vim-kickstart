@@ -17,3 +17,5 @@ OneLiner('filetype off')
 OneLiner('filetype plugin on')
 OneLiner('syntax enable')
 OneLiner("let g:user_emmet_leader_key='<C-e>'", "Remap emmet trigger jey ctrl + e")
+
+OneLiner("nnoremap <leader>s :w<cr>", "Save current buffer")

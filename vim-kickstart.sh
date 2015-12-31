@@ -1,6 +1,12 @@
 #!/bin/bash
+#######################################################################
+#          SCRIPT TO INSTALL SOME VIM PLUGINS AUTOMATICALLY           #
+#######################################################################
 
-#PARAMETERS 
+
+################
+#  PARAMETERS  #
+################
 
 VIMRC="$HOME/.vimrc"
 VIM_FOLDER="$HOME/.vim"
@@ -17,12 +23,18 @@ else
 fi
 
 
+##########################
+#  FUNCTION DEFINITIONS  #
+##########################
+
+
 check_brew(){
 	if [ $(which brew)  ]
 	then 
 		echo "Brew detected"
 	else 
 		echo "Brew not detected, install it, go to http://brew.sh"
+		#ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 		exit 1
 	fi
 }
