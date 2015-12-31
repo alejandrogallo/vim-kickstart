@@ -55,8 +55,12 @@ already_installed(){
 	echo -e "\t---> Package $1 already installed \n\t\t(erase the files in $VIM_INSTALL_FOLDER/ to trigger the installation)"
 }
 add_plugin(){
-	echo "Adding plugin $1 to .vimrc"
-	link=$1
+	if test -n "$1"; then 
+		link=$1
+	else
+		link=$plug_name
+	fi
+	echo "Adding plugin $link to .vimrc"
 	cp .vimrc .vimrc.tmp
 	cat .vimrc | perl -pe "s/(.*vundle#begin.*)/\1\nPlugin \'$link\'/g" > .vimrc.tmp
 	#cat .vimrc.tmp
@@ -269,8 +273,9 @@ fi
 folder_name="nerdcommenter"
 plug_name="scrooloose\/nerdcommenter"
 begin_install
-if test -z $PLUGIN_INSTALLED; then
-	echo "not installed"
+if test -z "$PLUGIN_INSTALLED"; then
+	add_plugin 
+	install_with_vundle 
 fi
 
 
