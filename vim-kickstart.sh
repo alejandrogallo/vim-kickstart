@@ -190,8 +190,6 @@ if test -z "$PLUGIN_INSTALLED"; then
 	add_config "set term=xterm-256color"
 	add_config "let g:airline#extensions#tabline#enabled = 1" 
 	add_config "let g:Powerline_symbols = 'fancy'"
-	add_config "noremap <Tab> :bn<CR>" 
-	add_config "noremap <Tab-S> :bp<CR>" 
 	install_with_vundle
 fi
 

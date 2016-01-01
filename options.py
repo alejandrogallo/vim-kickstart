@@ -92,7 +92,7 @@ class ManyOneLiners(object):
                 if j==0:
                     oneLiner = OneLiner(option, self.comment, self.auto_run)
                 else:
-                    oneLiner = OneLiner(option, comment="", self.auto_run)
+                    oneLiner = OneLiner(option, comment="", auto_run=self.auto_run)
                 oneLiners.append(oneLiner)
             self.oneLiners = oneLiners
     def checkIfExists(self):
