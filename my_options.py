@@ -19,3 +19,4 @@ OneLiner('syntax enable')
 OneLiner("let g:user_emmet_leader_key='<C-e>'", "Remap emmet trigger jey ctrl + e")
 
 OneLiner("nnoremap <leader>s :w<cr>", "Save current buffer")
+OneLiner("set incsearch", "Highlight search as you type the searching word")
