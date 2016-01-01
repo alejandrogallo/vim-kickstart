@@ -1,5 +1,5 @@
 
-from options import OneLiner
+from options import OneLiner, ManyOneLiners
 
 
 OneLiner("let mapleader='-'", "Set mapleader to something else if you like")
@@ -28,3 +28,5 @@ OneLiner("set incsearch", "Highlight search as you type the searching word")
 OneLiner("set wildmenu", "provide a graphical menu of all the matches you can cycle through in the command line")
 OneLiner("noremap <Tab> :bn<CR>","Change to next buffer") 
 OneLiner("noremap <Tab-S> :bp<CR>","Change to previous buffer") 
+
+ManyOneLiners(["let g:airline#extensions#tabline#enabled = 1", "let g:Powerline_symbols = 'fancy'"], "AIRLINE SETTINGS")
