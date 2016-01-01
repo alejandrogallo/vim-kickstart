@@ -70,7 +70,41 @@ class OneLiner(object):
         else: 
             print("OneLiner with command \v \t ---> %s \n already exists. \n" %self.option)
 
-        
+class ManyOneLiners(object):
 
+    """Like OneLiner but with many one liners """
 
+    def __init__(self, options, comment="", auto_run=True ):
+        self.options = options
+        self.comment = comment 
+        self.auto_run = auto_run
+        self.getOneLiners()
+        if self.auto_run:
+            self.run()
         
+    def getOneLiners(self):
+        if not type(self.options) is list:
+            raise Exception("Options must be a list of commands")
+            sys.exit(1)
+        else:
+            oneLiners = []
+            for (j,option) in enumerate(self.options):
+                if j==0:
+                    oneLiner = OneLiner(option, self.comment, self.auto_run)
+                else:
+                    oneLiner = OneLiner(option, comment="", self.auto_run)
+                oneLiners.append(oneLiner)
+            self.oneLiners = oneLiners
+    def checkIfExists(self):
+        for oneLiner in self.oneLiners:
+            if oneLiner.checkIfExists():
+                return True
+        return False
+    def write(self):
+        for oneLiner in self.oneLiners:
+            oneLiner.write()
+    def run(self):
+        if not self.checkIfExists():
+            self.write()
+        else: 
+            print(" ManyOneLiners with command \v \t ---> %s \n already exists. \n" %self.options)
