@@ -113,15 +113,12 @@ else
 	echo "Vundle.vim not detected"
 	echo "Getting Vundle from $VUNDLE_URL"
 	git clone https://github.com/VundleVim/Vundle.vim $VIM_INSTALL_FOLDER/Vundle.vim
-	echo -e "set nocompatible\nfiletype off\nset rtp+=$VIM_INSTALL_FOLDER/Vundle.vim\ncall vundle#begin()\nPlugin 'VundleVim/Vundle.vim'\n\" All of your Plugins must be added before the following line\ncall vundle#end()\nfiletype plugin indent on\n">>.vimrc
-	add_config "set nocompatible"
-	add_config "filetype off"
+	echo -e "set rtp+=$VIM_INSTALL_FOLDER/Vundle.vim\ncall vundle#begin()\nPlugin 'VundleVim/Vundle.vim'\n\" All of your Plugins must be added before the following line\ncall vundle#end()\nfiletype plugin indent on\n">>.vimrc
 	add_config "set rtp+=$VIM_INSTALL_FOLDER/Vundle.vim"
 	add_config "call vundle#begin()"
 	add_config "Plugin 'VundleVim/Vundle.vim'"
 	add_config "\" All of your Plugins must be added before the following line"
 	add_config "call vundle#end()"
-	add_config "filetype plugin indent on"
 	install_with_vundle
 fi
 

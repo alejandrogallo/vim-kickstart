@@ -15,6 +15,7 @@ OneLiner('set number', "Numbering of lines")
 OneLiner('set nocompatible', "No compatibility with vi")
 OneLiner('filetype off')
 OneLiner('filetype plugin on')
+OneLiner('filetype plugin indent on', "Automatic indentation for plugins")
 OneLiner('syntax enable')
 OneLiner("let g:user_emmet_leader_key='<C-e>'", "Remap emmet trigger jey ctrl + e")
 
