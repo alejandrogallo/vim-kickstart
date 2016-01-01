@@ -105,6 +105,7 @@ fi
 #  INSTALL PACKAGE MANAGER VUNDLE  #
 ####################################
 
+VUNDLE_URL="https://github.com/VundleVim/Vundle.vim"
 installing Vundle.vim
 if test -e $VIM_INSTALL_FOLDER/Vundle.vim
 then
@@ -112,13 +113,17 @@ then
 else	
 	echo "Vundle.vim not detected"
 	echo "Getting Vundle from $VUNDLE_URL"
-	git clone https://github.com/VundleVim/Vundle.vim $VIM_INSTALL_FOLDER/Vundle.vim
-	echo -e "set rtp+=$VIM_INSTALL_FOLDER/Vundle.vim\ncall vundle#begin()\nPlugin 'VundleVim/Vundle.vim'\n\" All of your Plugins must be added before the following line\ncall vundle#end()\nfiletype plugin indent on\n">>.vimrc
+	git clone $VUNDLE_URL $VIM_INSTALL_FOLDER/Vundle.vim
+	add_config "\" VUNDLE.VIM CONFIGURATION BEGIN"
+	add_config "set nocompatible"
+	add_config "filetype off"
 	add_config "set rtp+=$VIM_INSTALL_FOLDER/Vundle.vim"
 	add_config "call vundle#begin()"
 	add_config "Plugin 'VundleVim/Vundle.vim'"
 	add_config "\" All of your Plugins must be added before the following line"
 	add_config "call vundle#end()"
+	add_config "\" VUNDLE.VIM CONFIGURATION END"
+	add_config ""
 	install_with_vundle
 fi
 
@@ -216,15 +221,6 @@ if test -z "$PLUGIN_INSTALLED"; then
 	add_plugin 
 	add_plugin 'honza\/vim-snippets'
 	install_with_vundle
-	add_config '" ultisnips Configuration'
-	add_config '" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.'
-	add_config 'let g:UltiSnipsExpandTrigger="<C-j>"'
-	add_config 'let g:UltiSnipsJumpForwardTrigger="<c-n>"'
-	add_config 'let g:UltiSnipsJumpBackwardTrigger="<c-p>"'
-	add_config 'let g:UltiSnipsListSnippets="<c-l>"'
-	add_config ''
-	add_config '" If you want :UltiSnipsEdit to split your window.'
-	add_config 'let g:UltiSnipsEditSplit="vertical"'
 fi
 
 

@@ -2,6 +2,7 @@
 from options import OneLiner, ManyOneLiners
 
 
+OneLiner('set nocompatible', "No compatibility with vi")
 OneLiner("let mapleader='-'", "Set mapleader to something else if you like")
 
 OneLiner("inoremap kj <ESC>", "Go to normal mode typing  kj in insert mode")
@@ -9,10 +10,9 @@ OneLiner("inoremap kj <ESC>", "Go to normal mode typing  kj in insert mode")
 OneLiner("noremap <leader>ne :NERDTreeToggle<cr>", "Toggle NERDTree file structure easily")
 
 
-OneLiner('set background=dark')
+OneLiner('set background=dark', "Color Theme")
 OneLiner('set omnifunc=syntaxcomplete#Complete', "Autocompletion from vim" )
 OneLiner('set number', "Numbering of lines")
-OneLiner('set nocompatible', "No compatibility with vi")
 OneLiner('filetype off')
 OneLiner('filetype plugin on')
 OneLiner('filetype plugin indent on', "Automatic indentation for plugins")
@@ -30,4 +30,21 @@ OneLiner("set wildmenu", "provide a graphical menu of all the matches you can cy
 OneLiner("noremap <Tab> :bn<CR>","Change to next buffer") 
 OneLiner("noremap <Tab-S> :bp<CR>","Change to previous buffer") 
 
+
+######################
+#  AIRLINE settings  #
+######################
+
 ManyOneLiners(["let g:airline#extensions#tabline#enabled = 1", "let g:Powerline_symbols = 'fancy'"], "AIRLINE SETTINGS")
+
+
+###############
+#  UltiSnips  #
+###############
+
+ManyOneLiners([
+'let g:UltiSnipsExpandTrigger="<C-j>"',
+'let g:UltiSnipsJumpForwardTrigger="<c-n>"',
+'let g:UltiSnipsJumpBackwardTrigger="<c-p>"',
+'let g:UltiSnipsListSnippets="<c-l>"',
+'let g:UltiSnipsEditSplit="vertical"'], "ULTISNIPS CONFIGURATION")
