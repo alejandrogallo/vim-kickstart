@@ -29,6 +29,14 @@ class CodeLine(object):
         self._auto_run = auto_run
         if self._auto_run:
             self.run()
+    def toWrite(self, arg1):
+        """TODO: Docstring for toWrite.
+
+        :arg1: TODO
+        :returns: TODO
+
+        """
+        pass
     def getVIMRC(self, mode="a+"):
         """ 
             Returns file descriptor for the vim configuration file
@@ -54,7 +62,7 @@ class CodeLine(object):
     def write(self):
         fd = self.getVIMRC()
         fd.write(self._line)
-        fd.write("\n")
+        fd.write("\n"*2)
         fd.close()
     def run(self):
         if not self.checkIfExists():
@@ -79,8 +87,17 @@ class OneLiner(CodeLine):
             fd.write(comment)
             fd.write("\n")
         fd.write(self.option)
-        fd.write("\n")
+        fd.write("\n"*2)
         fd.close()
+        
+class Comment(CodeLine):
+
+    """Comments"""
+
+    def __init__(self, comment):
+        CodeLine.__init__(self, comment)
+
+        
 
 class ManyOneLiners(object):
 
