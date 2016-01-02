@@ -137,5 +137,3 @@ class ManyOneLiners(object):
             self.write()
         else: 
             print(" ManyOneLiners with command \v \t ---> %s \n already exists. \n" %self.options)
-
-

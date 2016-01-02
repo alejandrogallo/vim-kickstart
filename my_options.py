@@ -21,6 +21,7 @@ OneLiner("let g:user_emmet_leader_key='<C-e>'", "Remap emmet trigger jey ctrl + 
 
 OneLiner("nnoremap <leader>s :w<cr>", "Save current buffer")
 OneLiner("nnoremap <leader>q :q<cr>", "Close vim without saving")
+OneLiner("nnoremap <leader>f /", "/ is way too far away")
 OneLiner("set incsearch", "Highlight search as you type the searching word")
 # OneLiner(":nmap \t :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>", "Set tab to 4")
 # OneLiner(":nmap \T :set expandtab tabstop=8 shiftwidth=8 softtabstop=4<CR>", "Set tab to 4")
@@ -44,7 +45,9 @@ ManyOneLiners(["let g:airline#extensions#tabline#enabled = 1", "let g:Powerline_
 
 ManyOneLiners([
 'let g:UltiSnipsExpandTrigger="<C-j>"',
-'let g:UltiSnipsJumpForwardTrigger="<c-n>"',
+'let g:UltiSnipsJumpForwardTrigger="<C-j>"',
 'let g:UltiSnipsJumpBackwardTrigger="<c-p>"',
 'let g:UltiSnipsListSnippets="<c-l>"',
 'let g:UltiSnipsEditSplit="vertical"'], "ULTISNIPS CONFIGURATION")
+
+
