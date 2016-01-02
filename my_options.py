@@ -1,4 +1,3 @@
-
 from options import OneLiner, ManyOneLiners
 
 
@@ -36,7 +35,9 @@ OneLiner("noremap <Tab-S> :bp<CR>","Change to previous buffer")
 #  AIRLINE settings  #
 ######################
 
-ManyOneLiners(["let g:airline#extensions#tabline#enabled = 1", "let g:Powerline_symbols = 'fancy'"], "AIRLINE SETTINGS")
+ManyOneLiners([
+    "let g:airline#extensions#tabline#enabled = 1",
+    "let g:Powerline_symbols = 'fancy'"], "AIRLINE SETTINGS")
 
 
 ###############
@@ -46,7 +47,7 @@ ManyOneLiners(["let g:airline#extensions#tabline#enabled = 1", "let g:Powerline_
 ManyOneLiners([
 'let g:UltiSnipsExpandTrigger="<C-j>"',
 'let g:UltiSnipsJumpForwardTrigger="<C-j>"',
-'let g:UltiSnipsJumpBackwardTrigger="<c-p>"',
+'let g:UltiSnipsJumpBackwardTrigger="<c-k>"',
 'let g:UltiSnipsListSnippets="<c-l>"',
 'let g:UltiSnipsEditSplit="vertical"'], "ULTISNIPS CONFIGURATION")
 
