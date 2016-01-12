@@ -1,6 +1,8 @@
 VIM-KICKSTART
 =============
 
+# THIS README IS OUTDATED, DO NOT FOLLOW IT #
+
 Script to install some of my favourites vim packages in several computers without having to checkout every time how to install it.
 
 ----------
@@ -16,12 +18,8 @@ Just download the code and execute the script:
 The code is self-explanatory, so if you want to add other packages 
 go ahead. I use mainly the package manager [Vundle](https://github.com/VundleVim/Vundle.vim).
 
-Mac Users
--------
-I assume Mac users use the package manager [brew](https://brew.sh),  specially for the vim package [YouCompleteMe](https://github.com/Valloric/YouCompleteMe), you should update your vim version. 
 
 ## Disclaimer ##
 
-Theoretically the script shouldn't erase any information in the directory *.vim* or in the file *.vimrc*, however backing them up doesn't hurt. 
-
+Be careful
 
