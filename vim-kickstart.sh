@@ -129,43 +129,45 @@ fi
 
 
 ####################
-#  AUTOCOMPLETION  #
+##  YouCompleteMe  #
 ####################
 
-
-YCM_URL="https://github.com/Valloric/YouCompleteMe"
-installing YouCompleteMe
-if [ $__MAC__ ]
-then 
-	echo "We need MacVim"
-	if [ $(which mvim) ]
-	then 
-		echo "MacVim (mvim) detected..."
-	else 
-		echo "MacVim (mvim) not detected... Installing it"
-		brew install MacVim
-	fi
-fi
-
-
-if test -e $VIM_INSTALL_FOLDER/YouCompleteMe
-then
-   already_installed YouCompleteMe
-else
- 	echo "YouCompleteMe not detected, getting it from $YCM_URL"	
-	git clone $YCM_URL $VIM_INSTALL_FOLDER/YouCompleteMe
-	cd $VIM_INSTALL_FOLDER/YouCompleteMe
-	git submodule update --init --recursive
-	python install.py --clang-completer
-	cd ~ 
-	add_plugin "Valloric\/YouCompleteMe"
-	install_with_vundle
-
-fi
+#YCM_URL="https://github.com/Valloric/YouCompleteMe"
+#installing YouCompleteMe
+#if [ $__MAC__ ]
+#then 
+	#echo "We need MacVim"
+	#if [ $(which mvim) ]
+	#then 
+		#echo "MacVim (mvim) detected..."
+	#else 
+		#echo "MacVim (mvim) not detected... Installing it"
+		#brew install MacVim
+	#fi
+#fi
 
 
+#if test -e $VIM_INSTALL_FOLDER/YouCompleteMe
+#then
+   #already_installed YouCompleteMe
+#else
+   #echo "YouCompleteMe not detected, getting it from $YCM_URL"	
+	#git clone $YCM_URL $VIM_INSTALL_FOLDER/YouCompleteMe
+	#cd $VIM_INSTALL_FOLDER/YouCompleteMe
+	#git submodule update --init --recursive
+	#python install.py --clang-completer
+	#cd ~ 
+	#add_plugin "Valloric\/YouCompleteMe"
+	#install_with_vundle
 
-#INSTALL NERDTREE
+#fi
+
+
+
+##############
+#  NerdTree  #
+##############
+
 NERDTREE_URL="https://github.com/scrooloose/nerdtree.git"
 installing NERDTree
 if test -d $VIM_INSTALL_FOLDER/nerdtree
@@ -240,8 +242,42 @@ fi
 
 
 
+##################
+#  BUFFEXPLORER  #
+##################
+
+folder_name="bufexplorer"
+plug_name="jlanzarotta\/bufexplorer"
+begin_install
+if test -z "$PLUGIN_INSTALLED"; then
+  add_plugin
+  install_with_vundle
+fi
 
 
+##############
+#  SuperTab  #
+##############
+
+folder_name="supertab"
+plug_name="ervandew\/supertab"
+begin_install
+if test -z "$PLUGIN_INSTALLED"; then
+  add_plugin
+  install_with_vundle
+fi
+
+#################
+#  NeoComplete  #
+#################
+
+folder_name="neocomplete.vim"
+plug_name="Shougo\/neocomplete.vim"
+begin_install
+if test -z "$PLUGIN_INSTALLED"; then
+  add_plugin
+  install_with_vundle
+fi
 
 
 
