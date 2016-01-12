@@ -62,6 +62,9 @@ set wildmenu
 """"""""""""""""""""""
 "  LEADER key STUFF  "
 """"""""""""""""""""""
+"Set mapleader to something else if you like
+let mapleader='-'
+
 "Save current buffer
 nnoremap <leader>s :w<cr>
 
@@ -74,8 +77,6 @@ nnoremap <leader>f /
 "Toggle NERDTree file structure easily
 noremap <leader>ne :NERDTreeToggle<cr>
 
-"Set mapleader to something else if you like
-let mapleader='-'
 
 
 
