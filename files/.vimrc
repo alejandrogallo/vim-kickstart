@@ -3,7 +3,7 @@
 """"""""""""""""""""""
 set nocompatible
 filetype off
-set rtp+=/home/gallo/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'ervandew/supertab'

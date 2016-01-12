@@ -23,3 +23,8 @@ install-new-plugins:
 	./src/install-plugins.sh
 	./src/update-from-local-vimrc.sh
 
+purge-local:
+	rm -rf ~/.vim/bundle/*
+	echo "" > ~/.vimrc
+
+
