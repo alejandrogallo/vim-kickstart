@@ -1,3 +1,6 @@
+""""""""""""""""""""""
+"  VUNDLE.VIM STUFF  "
+""""""""""""""""""""""
 set nocompatible
 filetype off
 set rtp+=/home/gallo/.vim/bundle/Vundle.vim
@@ -6,29 +9,29 @@ Plugin 'Shougo/neocomplete.vim'
 Plugin 'ervandew/supertab'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'scrooloose/nerdcommenter'
-" Track the engine.
 Plugin 'SirVer/ultisnips'
-
- " Snippets are separated from the engine. Add this if you want them:
 "Plugin 'Valloric/YouCompleteMe'
 Plugin 'honza/vim-snippets'
 Plugin 'mattn/emmet-vim'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
+" Track the engine.
 Plugin 'VundleVim/Vundle.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()
+
+
+
+
+"""""""""""""""""""
+"  GENERAL STUFF  "
+"""""""""""""""""""
+
 "No compatibility with vi
 set nocompatible
 
-"Set mapleader to something else if you like
-let mapleader='-'
-
 "Go to normal mode typing  kj in insert mode
 inoremap kj <ESC>
-
-"Toggle NERDTree file structure easily
-noremap <leader>ne :NERDTreeToggle<cr>
 
 "Color Theme
 set background=dark
@@ -44,11 +47,21 @@ filetype plugin on
 "Automatic indentation for plugins
 filetype plugin indent on
 
+"enable coloring and so on 
 syntax enable
 
-"Remap emmet trigger jey ctrl + e
-let g:user_emmet_leader_key='<C-e>'
+"Highlight search as you type the searching word
+set incsearch
 
+"provide a graphical menu of all the matches you can cycle through in the command line
+set wildmenu
+
+
+
+
+""""""""""""""""""""""
+"  LEADER key STUFF  "
+""""""""""""""""""""""
 "Save current buffer
 nnoremap <leader>s :w<cr>
 
@@ -58,24 +71,38 @@ nnoremap <leader>q :q<cr>
 "/ is way too far away
 nnoremap <leader>f /
 
-"Highlight search as you type the searching word
-set incsearch
+"Toggle NERDTree file structure easily
+noremap <leader>ne :NERDTreeToggle<cr>
 
-"provide a graphical menu of all the matches you can cycle through in the command line
-set wildmenu
+"Set mapleader to something else if you like
+let mapleader='-'
 
+
+
+
+""""""""""""""""""
+"  Buffer stuff  "
+""""""""""""""""""
 "Change to next buffer
 noremap <Tab> :bn<CR>
 
 "Change to previous buffer
 noremap <S-Tab> :bp<CR>
 
-"AIRLINE SETTINGS
+
+
+
+"""""""""""""
+"  AIRLINE  "
+"""""""""""""
 let g:airline#extensions#tabline#enabled = 1
 
 let g:Powerline_symbols = 'fancy'
 
-"ULTISNIPS CONFIGURATION
+
+"""""""""""""""""""""
+"  ULTISNIPS STUFF  "
+"""""""""""""""""""""
 let g:UltiSnipsExpandTrigger="<C-j>"
 
 let g:UltiSnipsJumpForwardTrigger="<C-j>"
@@ -86,6 +113,12 @@ let g:UltiSnipsListSnippets="<c-l>"
 
 let g:UltiSnipsEditSplit="vertical"
 
+
+
+
+"""""""""""""""""""""""
+"  TAB CONFIGURATION  "
+"""""""""""""""""""""""
 "Set tabstop to tell vim how many columns a tab counts for
 set tabstop=2
 
@@ -110,3 +143,12 @@ set softtabstop=2
 "Set tab to 2
 :nmap \m :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>
 
+
+
+
+
+"""""""""""""""
+"  EMMET.VIM  "
+"""""""""""""""
+"Remap emmet trigger jey ctrl + e (CTRL+EMMET)
+let g:user_emmet_leader_key='<C-e>'
