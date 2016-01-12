@@ -97,7 +97,7 @@ noremap <S-Tab> :bp<CR>
 """""""""""""
 "  AIRLINE  "
 """""""""""""
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 
 let g:Powerline_symbols = 'fancy'
 
