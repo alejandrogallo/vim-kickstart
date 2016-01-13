@@ -161,3 +161,26 @@ set softtabstop=2
 """""""""""""""
 "Remap emmet trigger jey ctrl + e (CTRL+EMMET)
 let g:user_emmet_leader_key='<C-e>'
+
+
+
+"""""""""""""""""""""
+"  NEOCOMPLETE.VIM  "
+"""""""""""""""""""""
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
