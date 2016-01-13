@@ -174,6 +174,15 @@ let g:neocomplete#enable_at_startup = 1
 
 
 
+""""""""""""""""
+"  TERM STUFF  "
+""""""""""""""""
+if &term ==# "xterm"
+  " Sometimes when environment variable TERM is only set 
+  " to xterm, I have problems with colors, so I try to 
+  " force 256 colors and not only 8
+  let &term = "xterm-256color"
+endif
 
 
 
