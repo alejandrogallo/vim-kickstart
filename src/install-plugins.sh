@@ -282,8 +282,15 @@ folder_name="neocomplete.vim"
 plug_name="Shougo\/neocomplete.vim"
 begin_install
 if test -z "$PLUGIN_INSTALLED"; then
-  add_plugin
-  install_with_vundle
+  # Neocomplete needs vim with lua support
+  # Test it !
+  if vim --version | grep lua 
+  then 
+    add_plugin
+    install_with_vundle
+  else
+    echo "$folder_name needs vim compiled with lua, and your vim version does not have it. (check vim --version for flags)"
+  fi
 fi
 
 ####################
