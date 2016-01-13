@@ -286,6 +286,17 @@ if test -z "$PLUGIN_INSTALLED"; then
   install_with_vundle
 fi
 
+####################
+#  VIM-TABLE-MODE  #
+####################
+
+folder_name="vim-table-mode"
+plug_name="dhruvasagar\/vim-table-mode"
+begin_install
+if test -z "$PLUGIN_INSTALLED"; then
+  add_plugin
+  install_with_vundle
+fi
 
 
 
