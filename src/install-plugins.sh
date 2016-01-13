@@ -45,7 +45,8 @@ check_brew(){
     echo "Brew detected"
   else 
     echo "Brew not detected, install it, go to http://brew.sh"
-    #ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    echo "Install it running:"
+    echo 'ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
     exit 1
   fi
 }
@@ -284,7 +285,7 @@ begin_install
 if test -z "$PLUGIN_INSTALLED"; then
   # Neocomplete needs vim with lua support
   # Test it !
-  if vim --version | grep lua 
+  if vim --version | grep +lua 
   then 
     add_plugin
     install_with_vundle

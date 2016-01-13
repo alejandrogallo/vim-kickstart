@@ -27,4 +27,4 @@ purge-local:
 	rm -rf ~/.vim/bundle/*
 	echo "" > ~/.vimrc
 
-
+reset-all: purge-local all
