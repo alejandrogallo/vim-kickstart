@@ -284,13 +284,21 @@ plug_name="Shougo\/neocomplete.vim"
 begin_install
 if test -z "$PLUGIN_INSTALLED"; then
   # Neocomplete needs vim with lua support
-  # Test it !
+  # We have to Test it !
   if vim --version | grep +lua 
   then 
     add_plugin
     install_with_vundle
   else
     echo "$folder_name needs vim compiled with lua, and your vim version does not have it. (check vim --version for flags)"
+    if test -n "$__MAC__"
+    then
+      echo -e 'Try removing your vim with \n\t brew uninstall vim'
+      echo -e 'Install vim with lua:\n\t brew install vim --with-lua'
+    else
+      echo "The packages vim-nox, vim-gtk, vim-gnome and vim-athena are built with lua dependencies"
+    fi
+    read -p "Press any key to continue... " 
   fi
 fi
 
