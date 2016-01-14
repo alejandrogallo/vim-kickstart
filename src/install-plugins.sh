@@ -235,7 +235,7 @@ if test -z "$PLUGIN_INSTALLED"; then
     add_plugin
     install_with_vundle
   else
-    echo "UltiSnips (the nice program for autocompleting code) needs at least vim 4.7 to work"
+    echo "UltiSnips (the nice program for autocompleting code) needs at least vim 7.4 to work"
     echo "It is anyways a good idea to install a newer vim version"
     read -p "Press any key to continue... " 
   fi
