@@ -228,8 +228,17 @@ folder_name="ultisnips"
 plug_name="SirVer\/ultisnips"
 begin_install
 if test -z "$PLUGIN_INSTALLED"; then
-  add_plugin
-  install_with_vundle
+  # UltiSnips needs at least vim 7.4.x to work
+  # check it 
+  if vim --version | grep 7.4
+  then
+    add_plugin
+    install_with_vundle
+  else
+    echo "UltiSnips (the nice program for autocompleting code) needs at least vim 4.7 to work"
+    echo "It is anyways a good idea to install a newer vim version"
+    read -p "Press any key to continue... " 
+  fi
 fi
 
 
