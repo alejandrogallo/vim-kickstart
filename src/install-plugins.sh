@@ -12,16 +12,6 @@ VIMRC="$HOME/.vimrc"
 VIM_FOLDER="$HOME/.vim"
 VIM_INSTALL_FOLDER="$VIM_FOLDER/bundle"
 PLUGIN_INSTALLED=""
-if [ "$(uname)" == "Darwin"  ] 
-then
-  __MAC__="TRUE"
-  echo "We are on a MAC, yeah"
-  echo "We use brew for some stuff.. Maybe you should uninstall MacPorts and Fink if they are on the system."
-  echo "Checking for HomeBrew.."
-  check_brew
-else
-  __LINUX__="TRUE"
-fi
 
 
 ##########################
@@ -40,14 +30,14 @@ begin_install() {
 }
 
 check_brew(){
-  if [ $(which brew)  ]
+  if which brew
   then 
     echo "Brew detected"
   else 
     echo "Brew not detected, install it, go to http://brew.sh"
     echo "Install it running:"
     echo 'ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
-    exit 1
+    read -p "Press any key to continue, or get out with Ctrl-C"
   fi
 }
 
@@ -82,6 +72,26 @@ install_with_vundle(){
   echo "Calling Vundle installation routine"
   vim +PluginInstall +qall 
 }
+
+recognise_os () {
+  if [ "$(uname)" == "Darwin"  ] 
+  then
+    __MAC__="TRUE"
+    echo "We are on a MAC, yeah"
+    echo "We use brew for some stuff.. Maybe you should uninstall MacPorts and Fink if they are on the system."
+    echo "Checking for HomeBrew.."
+    check_brew
+  else
+    __LINUX__="TRUE"
+  fi
+}
+
+###########################################
+#  RECOGNISE OPERATING SYSTEM
+###########################################
+
+recognise_os
+
 
 
 ###########################################
@@ -218,8 +228,17 @@ folder_name="ultisnips"
 plug_name="SirVer\/ultisnips"
 begin_install
 if test -z "$PLUGIN_INSTALLED"; then
-  add_plugin
-  install_with_vundle
+  # UltiSnips needs at least vim 7.4.x to work
+  # check it 
+  if vim --version | grep 7.4
+  then
+    add_plugin
+    install_with_vundle
+  else
+    echo "UltiSnips (the nice program for autocompleting code) needs at least vim 7.4 to work"
+    echo "It is anyways a good idea to install a newer vim version"
+    read -p "Press any key to continue... " 
+  fi
 fi
 
 
