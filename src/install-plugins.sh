@@ -315,5 +315,18 @@ if test -z "$PLUGIN_INSTALLED"; then
 fi
 
 
+##############
+#  VASP.VIM  #
+##############
+
+folder_name="vasp.vim"
+plug_name="alejandrogallo\/vasp.vim"
+begin_install
+if test -z "$PLUGIN_INSTALLED"; then
+  add_plugin
+  install_with_vundle
+fi
+
+
 
 cd $ORIGIN
