@@ -171,6 +171,7 @@ let g:user_emmet_leader_key='<C-e>'
 """""""""""""""""""""
 " Use neocomplete.
 let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_fuzzy_completion = 1
 
 
 
