@@ -58,6 +58,8 @@ set incsearch
 "provide a graphical menu of all the matches you can cycle through in the command line
 set wildmenu
 
+" Return to the line where the cursor was before the latest jump 
+noremap <leader>r ``
 
 
 
