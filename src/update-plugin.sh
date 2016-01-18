@@ -1,6 +1,9 @@
 #!/bin/sh
 
+VIMRC="$HOME/.vimrc"
 plugin_name=$1
+
+
 if test -z $plugin_name
 then
   echo "usage: $0 <plugin-name>"
@@ -12,6 +15,8 @@ if test -d $plugin_folder
 then
   echo "Removing folder $plugin_folder"
   rm -rf $plugin_folder || exit 1
+  echo "Removing Plugin from $VIMRC"
+  sed "/$plug_name/d" $VIMRC || exit 1
 else
   echo "$plugin_folder not found, maybe you have the plugin somewhere else"
   exit 1

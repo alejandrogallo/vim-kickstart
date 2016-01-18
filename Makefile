@@ -31,3 +31,6 @@ list:
 	./src/list-plugins.sh
 
 reset-all: purge-local all
+
+update-plugins:
+	vim +PluginsUpdate
