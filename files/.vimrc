@@ -5,7 +5,7 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'wincent/command-t'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'alejandrogallo/vasp.vim'
 Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'Shougo/neocomplete.vim'

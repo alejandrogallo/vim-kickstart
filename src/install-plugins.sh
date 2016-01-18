@@ -347,24 +347,40 @@ if test -z "$PLUGIN_INSTALLED"; then
 fi
 
 
-###############
-#  COMMAND T  #
-###############
+################
+##  COMMAND T  #
+################
 
-folder_name="command-t"
-plug_name="wincent\/command-t"
+#folder_name="command-t"
+#plug_name="wincent\/command-t"
+#begin_install
+#if test -z "$PLUGIN_INSTALLED"; then
+  #if vim --version | grep +ruby; then
+    #add_plugin
+    #install_with_vundle
+    ##command t must be compiled
+    #echo "Changing to $plug_name directory to compile files"
+    #cd $VIM_INSTALL_FOLDER/$folder_name/ruby/command-t
+    #ruby extconf.rb && make
+    #cd -
+  #else
+    ##Command t needs vim compiled with ruby support
+    #echo "Command-t needs ruby support for vim, check it with ( vim --version | grep ruby)"
+    #read -p "Press any key to continue... " 
+  #fi
+#fi
+
+############
+#  CTRL P  #
+############
+
+folder_name="ctrlp.vim"
+plug_name="ctrlpvim\/ctrlp.vim"
 begin_install
 if test -z "$PLUGIN_INSTALLED"; then
-  if vim --version | grep +ruby; then
-    add_plugin
-    install_with_vundle
-  else
-    #Command t needs vim compiled with ruby support
-    echo "Command-t needs ruby support for vim, check it with ( vim --version | grep ruby)"
-    read -p "Press any key to continue... " 
-  fi
+  add_plugin
+  install_with_vundle
 fi
-
 
 
 cd $ORIGIN
