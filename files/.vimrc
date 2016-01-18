@@ -188,6 +188,11 @@ if &term ==# "xterm"
 endif
 
 
+""""""""""""
+"  Ctrl-p  "
+""""""""""""
+let g:ctrlp_map = '<c-p>' " This is the default
+let g:ctrlp_cmd = 'CtrlP'
 
 
 
