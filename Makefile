@@ -33,4 +33,4 @@ list:
 reset-all: purge-local all
 
 update-plugins:
-	vim +PluginsUpdate
+	vim +PluginUpdate
