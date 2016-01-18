@@ -355,8 +355,14 @@ folder_name="command-t"
 plug_name="wincent\/command-t"
 begin_install
 if test -z "$PLUGIN_INSTALLED"; then
-  add_plugin
-  install_with_vundle
+  if vim --version | grep +ruby; then
+    add_plugin
+    install_with_vundle
+  else
+    #Command t needs vim compiled with ruby support
+    echo "Command-t needs ruby support for vim, check it with ( vim --version | grep ruby)"
+    read -p "Press any key to continue... " 
+  fi
 fi
 
 
