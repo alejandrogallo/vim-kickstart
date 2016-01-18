@@ -347,5 +347,18 @@ if test -z "$PLUGIN_INSTALLED"; then
 fi
 
 
+###############
+#  COMMAND T  #
+###############
+
+folder_name="command-t"
+plug_name="wincent\/command-t"
+begin_install
+if test -z "$PLUGIN_INSTALLED"; then
+  add_plugin
+  install_with_vundle
+fi
+
+
 
 cd $ORIGIN
