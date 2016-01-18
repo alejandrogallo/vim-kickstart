@@ -56,10 +56,10 @@ add_plugin(){
     link=$plug_name
   fi
   echo "Adding plugin $link to .vimrc"
-  cp .vimrc .vimrc.tmp
-  cat .vimrc | perl -pe "s/(.*vundle#begin.*)/\1\nPlugin \'$link\'/g" > .vimrc.tmp
+  cp $VIMRC $VIMRC.tmp
+  cat $VIMRC | perl -pe "s/(.*vundle#begin.*)/\1\nPlugin \'$link\'/g" > $VIMRC.tmp
   #cat .vimrc.tmp
-  mv .vimrc.tmp .vimrc
+  mv $VIMRC.tmp $VIMRC
 
 }
 
@@ -98,10 +98,6 @@ recognise_os
 #  CONTROL OF VIM FOLDERS AND CONF FILES  #
 ###########################################
 
-ORIGIN=$PWD
-echo "CD to $HOME"
-cd $HOME
-
 # CONTROL OF DIRECTORIES 
 if test -d $VIM_FOLDER
 then 
@@ -115,7 +111,7 @@ then
   fi
 else
   echo "Creating .vim folder..."
-  mkdir .vim
+  mkdir $VIM_FOLDER
 fi
 
 
@@ -382,5 +378,21 @@ if test -z "$PLUGIN_INSTALLED"; then
   install_with_vundle
 fi
 
+##################
+#  vim-surround  #
+##################
 
-cd $ORIGIN
+folder_name="vim-surround"
+plug_name="tpope\/vim-surround"
+begin_install
+if test -z "$PLUGIN_INSTALLED"; then
+  add_plugin
+  install_with_vundle
+fi
+
+
+
+
+
+
+
