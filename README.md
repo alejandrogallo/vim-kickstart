@@ -1,23 +1,39 @@
 VIM-KICKSTART
 =============
 
-# THIS README IS OUTDATED, DO NOT FOLLOW IT #
-
-Script to install some of my favourites vim packages in several computers without having to checkout every time how to install it.
-
-----------
 
 ## Usage ##
 
-Just download the code and execute the script:
+Just download the code :
 
     git clone https://github.com/alejandrogallo/vim-kickstart.git
     cd vim-kickstart
     ./vim-kickstart
 
-The code is self-explanatory, so if you want to add other packages 
-go ahead. I use mainly the package manager [Vundle](https://github.com/VundleVim/Vundle.vim).
+I use mainly the package manager [Vundle](https://github.com/VundleVim/Vundle.vim).
+If you use another one it should not be difficult to adapt the code to another one.
 
+
+
+## Installing plugins ##
+
+To install the plugins just type 
+  
+  make install-plugins
+
+Beware, that this command will overwrite your `.vimrc` configuration file, so back it up.
+
+### Make rules ###
+
+  all: install-plugins update-local-vimrc 
+  clean:
+  update-local-vimrc:
+  update-repo-vimrc:
+  install-plugins:
+  install-new-plugins:
+  purge-local:
+  list:
+  reset-all: purge-local all
 
 ## Disclaimer ##
 
