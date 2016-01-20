@@ -199,9 +199,16 @@ let g:ctrlp_cmd = 'CtrlP'
 
 
 
+function! AppendUnicodeMath()
+  let l:math = system("tex2unicode.in", getline("."))
+  call append(".", l:math)
+endfunction
 
 
 
-
-
+""""""""""""""""""""
+"  MOVING AROUNDK  "
+""""""""""""""""""""
+"go to the next parentheses
+nnoremap gp /(<CR>
 
