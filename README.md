@@ -39,6 +39,8 @@ install-new-plugins:
 purge-local:
 list:
 reset-all: purge-local all
+update-snippets:
+  This just updates my custom snippets from another directory 
 ```
 
 ## Disclaimer ##
