@@ -211,4 +211,5 @@ endfunction
 """"""""""""""""""""
 "go to the next parentheses
 nnoremap gp /(<CR>
+nnoremap gP ?(<CR>
 
