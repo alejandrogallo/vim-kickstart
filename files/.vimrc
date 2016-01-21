@@ -35,6 +35,9 @@ set nocompatible
 "Go to normal mode typing  kj in insert mode
 inoremap kj <ESC>
 
+" map : to - 
+noremap - :
+
 "Color Theme
 set background=dark
 
@@ -66,23 +69,26 @@ noremap <leader>r ``
 """"""""""""""""""""""
 "  LEADER key STUFF  "
 """"""""""""""""""""""
-"Set mapleader to something else if you like
-let mapleader=','
+"Set maplocalleader to something else if you like
+let mapleader=';'
+
+"Set maplocalleader to something else if you like
+let maplocalleader=','
 
 "Save current buffer
-nnoremap <leader>w :w<cr>
+nnoremap <localleader>w :w<cr>
 
 "Close vim without saving
-nnoremap <leader>q :q<cr>
+nnoremap <localleader>q :q<cr>
 
 "/ is way too far away
-nnoremap <leader>f /
+nnoremap <localleader>f /
 
 " too complicated to replace
-nnoremap <leader>r :%s/
+nnoremap <localleader>r :%s/
 
 "Toggle NERDTree file structure easily
-noremap <leader>ne :NERDTreeToggle<cr>
+noremap <localleader>ne :NERDTreeToggle<cr>
 
 
 
