@@ -36,7 +36,7 @@ update-plugins:
 	vim +PluginUpdate
 
 update-snippets:
-	if ! test -d $(HOME)/.vim/UltiSnips; then \
+	@if ! test -d $(HOME)/.vim/UltiSnips; then \
 		mkdir $(HOME)/.vim/UltiSnips; \
 		cd $(HOME)/.vim/UltiSnips; \
 		git clone https://alejandrogallo@github.com/alejandrogallo/vim-snippets UltiSnips; \
