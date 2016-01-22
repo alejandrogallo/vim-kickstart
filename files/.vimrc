@@ -64,6 +64,10 @@ set wildmenu
 " Return to the line where the cursor was before the latest jump 
 noremap <leader>r ``
 
+" Marks for special characters
+:set listchars=eol:$,tab:>-,trail:_
+
+
 
 
 """"""""""""""""""""""
