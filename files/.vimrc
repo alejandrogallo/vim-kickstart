@@ -103,6 +103,9 @@ noremap <Tab> :bn<CR>
 "Change to previous buffer
 noremap <S-Tab> :bp<CR>
 
+"Delete 
+nnoremap <localleader>bd :bd<CR>
+
 
 
 
