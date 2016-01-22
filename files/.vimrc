@@ -203,6 +203,9 @@ endif
 let g:ctrlp_map = '<c-p>' " This is the default
 let g:ctrlp_cmd = 'CtrlP'
 
+" Ignore files in .gitignore
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
 
 
 function! AppendUnicodeMath()
