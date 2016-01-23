@@ -35,6 +35,10 @@ reset-all: purge-local all
 update-plugins:
 	vim +PluginUpdate
 
+push-changes:
+	git commit -am "Normal update"
+	git push origin master
+
 update-snippets:
 	@if ! test -d $(HOME)/.vim/UltiSnips; then \
 		mkdir $(HOME)/.vim/UltiSnips; \

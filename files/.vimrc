@@ -65,7 +65,8 @@ set wildmenu
 noremap <leader>r ``
 
 " Marks for special characters
-:set listchars=eol:$,tab:>-,trail:_
+set listchars=eol:¬,trail:·
+"set listchars=tab:>_
 
 
 
