@@ -391,6 +391,18 @@ if test -z "$PLUGIN_INSTALLED"; then
 fi
 
 
+###############
+#  SYNTASTIC  #
+###############
+
+folder_name="syntastic"
+plug_name="scrooloose\/syntastic"
+begin_install
+if test -z "$PLUGIN_INSTALLED"; then
+  add_plugin
+  install_with_vundle
+fi
+
 
 
 

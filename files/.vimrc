@@ -5,6 +5,7 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'alejandrogallo/vasp.vim'
@@ -47,6 +48,9 @@ set omnifunc=syntaxcomplete#Complete
 "Numbering of lines
 set number
 
+" Relative numbering
+set relativenumber
+
 filetype plugin on
 
 "Automatic indentation for plugins
@@ -66,7 +70,9 @@ noremap <leader>r ``
 
 " Marks for special characters
 set listchars=eol:¬,trail:·
-"set listchars=tab:>_
+set listchars+=tab:>_
+" Activate listchars
+set list
 
 
 
@@ -229,4 +235,17 @@ endfunction
 "go to the next parentheses
 nnoremap gp /(<CR>
 nnoremap gP ?(<CR>
+
+
+"""""""""""""""
+"  SYNTASTIC  "
+"""""""""""""""
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
