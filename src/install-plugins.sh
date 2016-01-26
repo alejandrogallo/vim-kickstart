@@ -403,8 +403,30 @@ if test -z "$PLUGIN_INSTALLED"; then
   install_with_vundle
 fi
 
+###################
+#  Color-schemes  #
+###################
+
+folder_name="vim-colorschemes"
+plug_name="flazz\/vim-colorschemes"
+begin_install
+if test -z "$PLUGIN_INSTALLED"; then
+  add_plugin
+  install_with_vundle
+fi
 
 
+#############
+#  GNUPLOT  #
+#############
+
+folder_name="gnuplot.vim"
+plug_name="vim-scripts\/gnuplot.vim"
+begin_install
+if test -z "$PLUGIN_INSTALLED"; then
+  add_plugin
+  install_with_vundle
+fi
 
 
 
