@@ -257,6 +257,7 @@ let g:syntastic_check_on_wq = 0
 """"""""""""""""
 let g:solarized_termcolors=256
 colorscheme solarized
+let b:hour = strftime("%H")
 set background=dark
 
 
