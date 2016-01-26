@@ -12,7 +12,10 @@ Plugin 'tpope/vim-surround'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'alejandrogallo/vasp.vim'
 Plugin 'dhruvasagar/vim-table-mode'
-Plugin 'Shougo/neocomplete.vim'
+if has("lua")
+  " it needs lua!
+  Plugin 'Shougo/neocomplete.vim'
+endif
 Plugin 'ervandew/supertab'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'scrooloose/nerdcommenter'
@@ -40,9 +43,6 @@ inoremap kj <ESC>
 
 " map : to - 
 noremap - :
-
-"Color Theme
-set background=dark
 
 "Autocompletion from vim
 set omnifunc=syntaxcomplete#Complete
@@ -250,4 +250,13 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+
+""""""""""""""""
+"  colortheme  "
+""""""""""""""""
+let g:solarized_termcolors=256
+colorscheme solarized
+set background=dark
+
 
