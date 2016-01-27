@@ -258,6 +258,11 @@ let g:syntastic_check_on_wq = 0
 let g:solarized_termcolors=256
 colorscheme solarized
 let b:hour = strftime("%H")
+if b:hour >= 9 && b:hour <=15
+  set background=light
+else
+  set background=dark
+endif
 set background=dark
 
 
