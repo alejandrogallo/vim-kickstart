@@ -19,7 +19,9 @@ endif
 Plugin 'ervandew/supertab'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'SirVer/ultisnips'
+if v:version >= 704
+  Plugin 'SirVer/ultisnips'
+endif
 Plugin 'honza/vim-snippets'
 Plugin 'mattn/emmet-vim'
 Plugin 'bling/vim-airline'
@@ -51,7 +53,10 @@ set omnifunc=syntaxcomplete#Complete
 set number
 
 " Relative numbering
-set relativenumber
+if v:version >= 704
+  "is only supported for vim 7.04 and above... 
+  set relativenumber
+endif
 
 filetype plugin on
 
