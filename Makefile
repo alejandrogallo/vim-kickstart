@@ -18,6 +18,7 @@ update-repo-vimrc:
 install-plugins:
 	./src/install-plugins.sh
 
+
 install-new-plugins:
 	./src/update-local-vimrc.sh
 	./src/install-plugins.sh
