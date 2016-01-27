@@ -5,6 +5,7 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/gnuplot.vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/syntastic'
@@ -20,6 +21,7 @@ Plugin 'ervandew/supertab'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'scrooloose/nerdcommenter'
 if v:version >= 704
+  "it needs vim 7.04..
   Plugin 'SirVer/ultisnips'
 endif
 Plugin 'honza/vim-snippets'
