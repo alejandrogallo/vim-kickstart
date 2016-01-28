@@ -449,3 +449,16 @@ if test -z "$PLUGIN_INSTALLED"; then
   add_plugin
   install_with_vundle
 fi
+
+
+#################
+#  vim tabular  #
+#################
+
+folder_name="tabular"
+plug_name="godlygeek\/tabular"
+begin_install
+if test -z "$PLUGIN_INSTALLED"; then
+  add_plugin
+  install_with_vundle
+fi

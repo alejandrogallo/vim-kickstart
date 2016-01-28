@@ -5,6 +5,7 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/gnuplot.vim'
 Plugin 'flazz/vim-colorschemes'
