@@ -26,6 +26,7 @@ if v:version >= 704
 endif
 Plugin 'honza/vim-snippets'
 Plugin 'mattn/emmet-vim'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
 " Track the engine.

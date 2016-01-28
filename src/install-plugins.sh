@@ -201,6 +201,15 @@ if test -z "$PLUGIN_INSTALLED"; then
   install_with_vundle
 fi
 
+#AIRLINE THEMES
+
+folder_name="vim-airline-themes"
+plug_name="vim-airline\/vim-airline-themes"
+begin_install
+if test -z "$PLUGIN_INSTALLED"; then
+  add_plugin 
+  install_with_vundle
+fi
 
 ########################################
 #  Install Emmet for vim (html stuff)  #
