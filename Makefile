@@ -12,6 +12,9 @@ clean:
 update-local-vimrc:
 	./src/update-local-vimrc.sh
 
+profile-vim:
+	vim --cmd "profile start vimrc.profile" --cmd "profile! file ./files/.vimrc"
+
 update-repo-vimrc:
 	./src/update-from-local-vimrc.sh
 
