@@ -81,7 +81,7 @@ noremap <leader>r ``
 
 " Marks for special characters
 set listchars=eol:¬,trail:·
-set listchars+=tab:>_
+set listchars+=tab:>\ 
 " Activate listchars
 set list
 
